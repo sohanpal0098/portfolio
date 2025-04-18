@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B);
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;  
@@ -8,7 +8,7 @@
   scroll-behavior: smooth;
 }
 
-body{
+body {
 width: 100%;    
 height: auto;
 background-color: black;
@@ -29,7 +29,7 @@ width: 10px;
     transition: all 0.3s ease;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
     background: #b74b4b;
 }
 
@@ -43,7 +43,7 @@ nav {
     height: 100%;
     display: flex;
     justify-content: space-around;
-    align-items: center ;
+    align-items: center;
 }
 
 .logo{
@@ -64,6 +64,7 @@ nav {
     right: 15px;
     top: 10px;
     color: white;
+    opacity: 0;
     pointer-events: none;
     font-size: clamp(2.5rem,0.5rem + 5vw, 3rem);
 }
@@ -72,7 +73,7 @@ nav {
     display: flex;
 }
 
-.nav-container .links a{
+.nav-container .links a {
     position: relative;
     font-size: 1.2rem;
     color: white;
@@ -82,7 +83,7 @@ nav {
     transition: 0.3s linear;
 }
 
-.nav-container .linksa::before {
+.nav-container .links a::before {
     position: absolute;
     content: "";
     bottom: -3px;
@@ -90,5 +91,83 @@ nav {
     width: 0%;
     height: 3px;
     background-color: #b74b4b;
-    transition: ;
+    transition: 0.2s linear;
 }
+
+.nav-container .links a:hover {
+    color: #b74b4b;
+}
+
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+    background-color: #b74b4b;
+}
+
+section {
+    width: 100%;   
+    min-height: 90vh;
+}
+
+section .main-container{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    align-items: center;
+}
+
+.main-container .image{
+    width: 500px;
+    height: 80vh;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 50px#b74b4b;
+}
+
+.main-container .image img{
+    width: 100%;
+}
+
+.main-container .image:hover{
+    animation: animate 1.5s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% {
+    scale: 1; 
+}
+
+50% {
+    scale: 1.05;
+}
+
+100% {
+    scale: 1;
+ }
+}
+
+.main-container .content {
+    color: white;
+    width: 50%;
+}
+
